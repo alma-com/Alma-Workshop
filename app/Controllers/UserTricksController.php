@@ -7,6 +7,7 @@ use Tricks\Repositories\TagRepositoryInterface;
 use Tricks\Repositories\TrickRepositoryInterface;
 use Tricks\Repositories\CategoryRepositoryInterface;
 use Input;
+use File;
 
 class UserTricksController extends BaseController
 {
@@ -155,6 +156,8 @@ class UserTricksController extends BaseController
         $trick->tags()->detach();
         $trick->categories()->detach();
         $trick->delete();
+
+        File::deleteDirectory('storage/' . Auth::user()->id . '/' . $trick->id);
 
         return $this->redirectRoute('user.index', null, [
             'success' => \Lang::get('user_tricks.trick_deleted')
