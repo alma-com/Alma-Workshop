@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Tricks\Services\Forms\CategoryForm;
 use Tricks\Exceptions\CategoryNotFoundException;
 use Tricks\Repositories\CategoryRepositoryInterface;
+use Slug;
 
 class CategoryRepository extends AbstractRepository implements CategoryRepositoryInterface
 {

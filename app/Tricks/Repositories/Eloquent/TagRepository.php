@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Tricks\Services\Forms\TagForm;
 use Tricks\Exceptions\TagNotFoundException;
 use Tricks\Repositories\TagRepositoryInterface;
+use Slug;
 
 class TagRepository extends AbstractRepository implements TagRepositoryInterface
 {

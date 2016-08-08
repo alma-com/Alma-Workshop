@@ -14,6 +14,7 @@ use Tricks\Exceptions\TagNotFoundException;
 use Illuminate\Database\Eloquent\Collection;
 use Tricks\Exceptions\CategoryNotFoundException;
 use Tricks\Repositories\TrickRepositoryInterface;
+use Slug;
 
 class TrickRepository extends AbstractRepository implements TrickRepositoryInterface
 {
