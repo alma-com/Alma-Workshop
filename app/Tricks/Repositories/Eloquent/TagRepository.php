@@ -91,7 +91,7 @@ class TagRepository extends AbstractRepository implements TagRepositoryInterface
         $tag = $this->getNew();
 
         $tag->name = $data['name'];
-        $tag->slug = Str::slug($tag->name, '-');
+        $tag->slug = Slug::make($tag->name, '-');
 
         $tag->save();
 
@@ -110,7 +110,7 @@ class TagRepository extends AbstractRepository implements TagRepositoryInterface
         $tag = $this->findById($id);
 
         $tag->name = $data['name'];
-        $tag->slug = Str::slug($tag->name, '-');
+        $tag->slug = Slug::make($tag->name, '-');
 
         $tag->save();
 

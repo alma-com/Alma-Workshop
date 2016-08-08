@@ -90,7 +90,7 @@ class CategoryRepository extends AbstractRepository implements CategoryRepositor
         $category = $this->getNew();
 
         $category->name        = e($data['name']);
-        $category->slug        = Str::slug($category->name, '-');
+        $category->slug        = Slug::make($category->name, '-');
         $category->description = $data['description'];
         $category->order       = $this->getMaxOrder() + 1;
 
@@ -111,7 +111,7 @@ class CategoryRepository extends AbstractRepository implements CategoryRepositor
         $category = $this->findById($id);
 
         $category->name         = e($data['name']);
-        $category->slug         = Str::slug($category->name, '-');
+        $category->slug         = Slug::make($category->name, '-');
         $category->description  = $data['description'];
 
         $category->save();

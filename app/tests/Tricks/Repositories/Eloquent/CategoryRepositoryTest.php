@@ -209,7 +209,7 @@ extends TestCase
       $categoryMock->order
     );
 
-    $this->incomplete('Need to mock e() and Str::slug()');
+    $this->incomplete('Need to mock e() and Slug::make()');
   }
 
   /**
@@ -251,7 +251,7 @@ extends TestCase
       $categoryMock->description
     );
 
-    $this->incomplete('Need to mock e() and Str::slug()');
+    $this->incomplete('Need to mock e() and Slug::make()');
   }
 
   /**
