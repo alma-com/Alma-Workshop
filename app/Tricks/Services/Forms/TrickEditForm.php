@@ -21,7 +21,6 @@ class TrickEditForm extends AbstractForm
         'description'   => 'required|min:10',
         'tags'          => 'required',
         'categories'    => 'required',
-        'code'          => 'required'
     ];
 
     public function __construct($id)

@@ -44,6 +44,7 @@ class TricksController extends BaseController
         }
 
         $trick = $this->tricks->findBySlug($slug);
+        $archive = $this->tricks->getFileArchive($trick->id);
 
         if (is_null($trick)) {
             return $this->redirectRoute('home');
@@ -54,7 +55,7 @@ class TricksController extends BaseController
         $next = $this->tricks->findNextTrick($trick);
         $prev = $this->tricks->findPreviousTrick($trick);
 
-        $this->view('tricks.single', compact('trick', 'next', 'prev'));
+        $this->view('tricks.single', compact('trick', 'archive', 'next', 'prev'));
     }
 
     /**

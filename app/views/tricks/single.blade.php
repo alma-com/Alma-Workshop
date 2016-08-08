@@ -42,6 +42,11 @@
                             </div>
                         </div>
                     </div>
+                    @if($archive)
+                        <p>
+                            <a href="{{ $archive }}">{{ trans('tricks.archive_download') }}</a>
+                        </p>
+                    @endif
                     <p>{{{ $trick->description }}}</p>
                     <pre><code class="php">{{{ $trick->code }}}</code></pre>
                 </div>
