@@ -25,7 +25,7 @@ class Trick extends Model
       *
       * @var array
       */
-	protected $with = [ 'tags', 'categories', 'user' ];
+      protected $with = [ 'tags', 'categories', 'user' ];
 
     /**
      * Query the tricks' votes.

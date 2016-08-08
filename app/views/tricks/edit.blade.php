@@ -39,7 +39,7 @@
               <h5>{{ Session::get('success') }}</h5>
             </div>
           @endif
-          {{ Form::open(array('class'=>'form-vertical','id'=>'save-trick-form','role'=>'form'))}}
+          {{ Form::open(['class'=>'form-vertical','id'=>'save-trick-form','role'=>'form', 'files' => true])}}
               <div class="form-group">
                 <label for="title">{{ trans('tricks.title') }}</label>
                 {{Form::text('title', $trick->title, array('class'=>'form-control','placeholder'=>trans('tricks.title_placeholder')));}}
@@ -47,6 +47,10 @@
               <div class="form-group">
                 <label for="description">{{ trans('tricks.description') }}</label>
                 {{Form::textarea('description',$trick->description, array('class'=>'form-control','placeholder'=>trans('tricks.trick_description_placeholder'),'rows'=>'3'));}}
+              </div>
+              <div class="form-group">
+                <label for="archive">{{ trans('tricks.archive') }}</label>
+                <input name="archive" type="file" id="archive">
               </div>
               <div class="form-group">
                 <label>{{ trans('tricks.trick_code') }}</label>

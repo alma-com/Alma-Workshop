@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Tricks\Exceptions\CategoryNotFoundException;
 use Tricks\Repositories\TrickRepositoryInterface;
 use Slug;
+use Illuminate\Support\Facades\Auth;
 
 class TrickRepository extends AbstractRepository implements TrickRepositoryInterface
 {
@@ -45,6 +46,21 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
         $this->model    = $trick;
         $this->category = $category;
         $this->tag      = $tag;
+    }
+
+    /**
+     * Get folder archive trick
+     *
+     * @param  integer $trickId
+     * @param  integer $userId
+     * @return string
+     */
+    public function getFolderArchive($trickId = '', $userId = '')
+    {
+        if($trickId === '') return false;
+        if($userId === '') $userId = Auth::user()->id;
+
+        return 'storage/' . $userId . '/' . $trickId;
     }
 
     /**

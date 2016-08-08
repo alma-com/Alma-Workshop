@@ -90,7 +90,7 @@ class UserTricksController extends BaseController
 
         if (Input::hasFile('archive')) {
             $file = Input::file('archive');
-            $file->move('storage/' . $data['user_id'] . '/' . $trick->id, $file->getClientOriginalName());
+            $file->move($this->trick->getFolderArchive($trick->id), $file->getClientOriginalName());
         }
 
         return $this->redirectRoute('user.index');
@@ -138,6 +138,12 @@ class UserTricksController extends BaseController
         $data  = $form->getInputData();
         $trick = $this->trick->edit($trick, $data);
 
+        if (Input::hasFile('archive')) {
+            $file = Input::file('archive');
+            File::deleteDirectory($this->trick->getFolderArchive($trick->id));
+            $file->move($this->trick->getFolderArchive($trick->id), $file->getClientOriginalName());
+        }
+
         return $this->redirectRoute('tricks.edit', [ $trick->slug ], [
             'success' => \Lang::get('user_tricks.trick_updated')
         ]);
@@ -157,7 +163,7 @@ class UserTricksController extends BaseController
         $trick->categories()->detach();
         $trick->delete();
 
-        File::deleteDirectory('storage/' . Auth::user()->id . '/' . $trick->id);
+        File::deleteDirectory($this->trick->getFolderArchive($trick->id));
 
         return $this->redirectRoute('user.index', null, [
             'success' => \Lang::get('user_tricks.trick_deleted')

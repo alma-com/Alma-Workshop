@@ -7,6 +7,16 @@ use Tricks\Trick;
 
 interface TrickRepositoryInterface
 {
+
+    /**
+     * Get folder archive trick
+     *
+     * @param  integer $trickId
+     * @param  integer $userId
+     * @return string
+     */
+    public function getFolderArchive($trickId = '', $userId = '');
+
     /**
      * Find all the tricks for the given user paginated.
      *
