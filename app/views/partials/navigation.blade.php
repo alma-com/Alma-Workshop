@@ -8,8 +8,8 @@
 				<span class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="{{ url('/') }}">
-				<img width="207" height="50" src="{{ asset('img/logo@2x.1.png') }}">
+			<a class="navbar-brand logo" href="{{ url('/') }}">
+				Alma Workshop
 			</a>
 		</div>
 
