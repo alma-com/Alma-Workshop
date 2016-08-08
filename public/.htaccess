@@ -3,15 +3,6 @@
     AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
 </IfModule>
 
-<IfModule mod_rewrite.c>
-   # Rewrite laravel-tricks.com to www.laravel-tricks.com
-   RewriteCond %{HTTPS} !=on
-   RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
-   RewriteCond %{HTTP_HOST} !=localhost [NC]
-   RewriteCond %{HTTP_HOST} !=127.0.0.1
-   RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-</IfModule>
-
 <IfModule mod_autoindex.c>
     Options -Indexes
 </IfModule>
