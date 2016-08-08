@@ -42,7 +42,7 @@
                   @endforeach
               </div>
           @endif
-          {{ Form::open(array('class'=>'form-vertical','id'=>'save-trick-form','role'=>'form'))}}
+          {{ Form::open(['class'=>'form-vertical','id'=>'save-trick-form','role'=>'form', 'files' => true])}}
               <div class="form-group">
                 <label for="title">{{ trans('tricks.title') }}</label>
                 {{Form::text('title', null, array('class'=>'form-control','placeholder'=>trans('tricks.title_placeholder') ));}}
@@ -51,6 +51,12 @@
                 <label for="description">{{ trans('tricks.description') }}</label>
                 {{Form::textarea('description',null, array('class'=>'form-control','placeholder'=>trans('tricks.trick_description_placeholder'),'rows'=>'3'));}}
               </div>
+
+              <div class="form-group">
+                <label for="archive">{{ trans('tricks.archive') }}</label>
+                <input name="archive" type="file" id="archive">
+              </div>
+
               <div class="form-group">
                 <label>{{ trans('tricks.trick_code') }}</label>
                 <div id="editor-content" class="content-editor"></div>

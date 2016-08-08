@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Tricks\Repositories\TagRepositoryInterface;
 use Tricks\Repositories\TrickRepositoryInterface;
 use Tricks\Repositories\CategoryRepositoryInterface;
+use Input;
 
 class UserTricksController extends BaseController
 {
@@ -85,6 +86,11 @@ class UserTricksController extends BaseController
         $data['user_id'] = Auth::user()->id;
 
         $trick = $this->trick->create($data);
+
+        if (Input::hasFile('archive')) {
+            $file = Input::file('archive');
+            $file->move('storage/' . $data['user_id'] . '/' . $trick->id, $file->getClientOriginalName());
+        }
 
         return $this->redirectRoute('user.index');
     }
