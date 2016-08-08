@@ -107,6 +107,8 @@ class UserTricksController extends BaseController
         $trick        = $this->trick->findBySlug($slug);
         $tagList      = $this->tags->listAll();
         $categoryList = $this->categories->listAll();
+        $archive      = $this->trick->getFileArchive($trick->id);
+
 
         $selectedTags       = $this->trick->listTagsIdsForTrick($trick);
         $selectedCategories = $this->trick->listCategoriesIdsForTrick($trick);
@@ -115,6 +117,7 @@ class UserTricksController extends BaseController
             'tagList'            => $tagList,
             'selectedTags'       => $selectedTags,
             'categoryList'       => $categoryList,
+            'archive'            => $archive,
             'selectedCategories' => $selectedCategories,
             'trick'              => $trick
         ]);
@@ -167,6 +170,22 @@ class UserTricksController extends BaseController
 
         return $this->redirectRoute('user.index', null, [
             'success' => \Lang::get('user_tricks.trick_deleted')
+        ]);
+    }
+
+    /**
+     * Delete a archive.
+     *
+     * @param  string $slug
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function getDeleteArchive($slug)
+    {
+        $trick = $this->trick->findBySlug($slug);
+        File::deleteDirectory($this->trick->getFolderArchive($trick->id));
+
+        return $this->redirectRoute('tricks.edit', [ $trick->slug ], [
+            'success' => \Lang::get('user_tricks.trick_archive_deleted')
         ]);
     }
 }

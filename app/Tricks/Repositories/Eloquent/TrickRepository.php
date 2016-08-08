@@ -16,6 +16,7 @@ use Tricks\Exceptions\CategoryNotFoundException;
 use Tricks\Repositories\TrickRepositoryInterface;
 use Slug;
 use Illuminate\Support\Facades\Auth;
+use File;
 
 class TrickRepository extends AbstractRepository implements TrickRepositoryInterface
 {
@@ -61,6 +62,26 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
         if($userId === '') $userId = Auth::user()->id;
 
         return 'storage/' . $userId . '/' . $trickId;
+    }
+
+    /**
+     * Get file archive trick
+     *
+     * @param  integer $trickId
+     * @param  integer $userId
+     * @return string
+     */
+    public function getFileArchive($trickId = '', $userId = '')
+    {
+        $folder = $this->getFolderArchive($trickId, $userId);
+        if($folder) {
+            $file = File::files($folder);
+            if(count($file) > 0) {
+                return '/' . array_shift($file);
+            }
+        }
+
+        return false;
     }
 
     /**

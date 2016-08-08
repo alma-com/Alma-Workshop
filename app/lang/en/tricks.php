@@ -15,6 +15,7 @@ return array(
     'title_placeholder' => 'Name this trick',
     'description' => 'Description',
     'remove_trick' => 'Remove trick',
+    'remove_trick_archive' => 'Remove file',
     'trick_description_placeholder' => 'Give detailed description of the trick',
     'trick_code' => 'Trick code:',
     'save_trick' => 'Save Trick',
@@ -22,5 +23,8 @@ return array(
     'errors_while_editing' => 'There were errors while editing this trick:',
     'errors_while_creating' => 'There were errors while creating this trick:',
     'are_you_sure_text' => 'Are you sure you want to remove this trick?',
+    'are_you_sure_archive_text' => 'Are you sure you want to remove this file?',
     'archive' => 'Archive',
+    'archive_download' => 'Download file',
+    'archive_delete' => 'Delete file',
 );

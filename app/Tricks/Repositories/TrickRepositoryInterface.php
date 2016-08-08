@@ -18,6 +18,15 @@ interface TrickRepositoryInterface
     public function getFolderArchive($trickId = '', $userId = '');
 
     /**
+     * Get file archive trick
+     *
+     * @param  integer $trickId
+     * @param  integer $userId
+     * @return string
+     */
+    public function getFileArchive($trickId = '', $userId = '');
+
+    /**
      * Find all the tricks for the given user paginated.
      *
      * @param  \User $user

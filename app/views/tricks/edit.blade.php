@@ -19,6 +19,11 @@
             <div class="pull-right">
               <a data-toggle="modal" href="#deleteModal">{{ trans('tricks.delete') }}</a>
               @include('tricks.delete',['link'=>$trick->deleteLink])
+
+              @if($archive)
+                <br><a data-toggle="modal" href="#deleteArchiveModal">{{ trans('tricks.archive_delete') }}</a>
+                @include('tricks.delete_archive',['link'=>route('tricks.deleteArchive', $trick->slug)])
+              @endif
             </div>
           @endif
           <h1 class="page-title">
@@ -39,6 +44,7 @@
               <h5>{{ Session::get('success') }}</h5>
             </div>
           @endif
+
           {{ Form::open(['class'=>'form-vertical','id'=>'save-trick-form','role'=>'form', 'files' => true])}}
               <div class="form-group">
                 <label for="title">{{ trans('tricks.title') }}</label>
@@ -50,6 +56,9 @@
               </div>
               <div class="form-group">
                 <label for="archive">{{ trans('tricks.archive') }}</label>
+                @if($archive)
+                  <a href="{{ $archive }}">{{ trans('tricks.archive_download') }}</a>
+                @endif
                 <input name="archive" type="file" id="archive">
               </div>
               <div class="form-group">
@@ -71,6 +80,7 @@
                 </div>
               </div>
           {{Form::close()}}
+
         </div>
       </div>
     </div>

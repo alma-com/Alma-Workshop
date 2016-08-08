@@ -80,6 +80,7 @@ Route::group([ 'namespace' => 'Controllers' ], function () {
 
     # Trick delete route
     Route::get('user/tricks/{trick_slug}/delete', [ 'as' => 'tricks.delete', 'uses' => 'UserTricksController@getDelete' ]);
+    Route::get('user/tricks/{trick_slug}/deleteArchive', [ 'as' => 'tricks.deleteArchive', 'uses' => 'UserTricksController@getDeleteArchive' ]);
 
     # Feed routes
     Route::get('feed', [ 'as' => 'feed.atom', 'uses' => 'FeedsController@getAtom' ]);
