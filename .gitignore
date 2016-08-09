@@ -7,3 +7,4 @@ composer.lock
 Thumbs.db
 /cgi-bin
 public/storage/
+app/config/database.php
