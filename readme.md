@@ -85,7 +85,7 @@ PSR-2 is a coding standard by PHP-FIG which aims to unify the way PHP code gets 
 - <http://twitter.com/msurguy>
 - <http://github.com/msurguy>
 
-**Zualex*
+**Zualex**
 
 - <https://twitter.com/iamZualex>
 - <https://github.com/zualex>
