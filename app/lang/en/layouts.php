@@ -1,10 +1,7 @@
-<?php 
+<?php
 
 return array(
-	'meta_description' => 'Laravel tricks is a website that aggregates useful tips and tricks for Laravel PHP framework',
-	'meta_author' => 'Stidges, @stidges and Maks Surguy, @msurguy',
-	'site_title' => 'Laravel-Tricks.com',
-    
+    'meta_description' => 'Workshop useful tips and tricks for Alma',
+    'meta_author' => 'Stidges @stidges, Maks Surguy @msurguy and Zualex @zualex',
+    'site_title' => 'Alma Workshop',
 );
-
-
