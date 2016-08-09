@@ -1,37 +1,12 @@
-# [Laravel-Tricks](http://www.laravel-tricks.com)
-
-Laravel Tricks is a website created by [Stidges](https://twitter.com/stidges) and [Maksim Surguy](http://twitter.com/msurguy) as an unofficial repository of tips and tricks for web developers using the [Laravel](http://laravel.com) PHP framework.
-
-To see what this is about check out <http://www.laravel-tricks.com>!
+# Alma Workshop
 
 ## Table of contents
 
- - [Purpose and Features](#purpose-and-features)
  - [Requirements](#requirements)
  - [Quick Start and Installation](#quick-start-and-installation)
  - [Documentation](#documentation)
- - [Contributing](#contributing)
  - [Authors](#authors)
  - [Copyright and License](#copyright-and-license)
-
-## Purpose and Features
-
-The purpose of this repository is to provide a source of a real website that's using the Laravel PHP Framework and implements good design patterns for its architecture.
-
-The features of [Laravel-Tricks](http://www.laravel-tricks.com) are:
-
-- Multi User platform that enables registered users to post short excerpts of code and descriptions to go along with the code.
-- Sorting and search.
-- Categories and tags for each user submitted entry.
-- OAuth 2 Github Registration and Login using [OAuth 2 client from PHP League](https://github.com/thephpleague/oauth2-client).
-- Disqus integration for commenting.
-- Customized [Bootstrap](http://getbootstrap.com) theme.
-- AJAX favoriting.
-- Gravatar integration.
-- Using [jQuery FileAPI](http://rubaxa.github.io/jquery.fileapi/) for avatar uploads and cropping.
-- Using [Intervention Image](https://github.com/Intervention/image) to handle the server side of the avatar uploads.
-- Pinterest-inspired grid implemented with [Masonry](http://masonry.desandro.com/).
-- Presenter classes implemented with the [Laravel Auto Presenter](https://github.com/ShawnMcCool/laravel-auto-presenter) package.
 
 ## Requirements
 
@@ -98,17 +73,6 @@ The `app/Tricks` directory is structured in the following manner:
 The Laravel-Tricks application is [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) compliant (and PSR-0 and PSR-1, which PSR-2 extends).
 PSR-2 is a coding standard by PHP-FIG which aims to unify the way PHP code gets written, so that everyone collaborating on a project will adhere to the same standards. This makes the code easier to read and understand.
 
-## Contributing
-
-Contributions to this repository are more than welcome although not all suggestions will be accepted and merged with the live site.
-
-## Community
-
-Keep track of development and Laravel-Tricks news.
-
-- Follow [@laraveltricks on Twitter](http://twitter.com/laraveltricks).
-
-
 ## Authors
 
 **Stidges**
@@ -120,6 +84,11 @@ Keep track of development and Laravel-Tricks news.
 
 - <http://twitter.com/msurguy>
 - <http://github.com/msurguy>
+
+**Zualex*
+
+- <https://twitter.com/iamZualex>
+- <https://github.com/zualex>
 
 ## Copyright and license
 
