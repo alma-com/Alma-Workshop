@@ -13,8 +13,6 @@ return array(
     'my_favorites' => 'My Favorites',
     'settings' => 'Settings',
     'logout' => 'Logout',
-    'footer_links' => '<a target="_blank" href="http://twitter.com/laraveltricks" title="Follow updates"><i class="fa fa-twitter fa-lg"></i></a>
-        |
-        <a target="_blank" href="https://github.com/CodepadME/laravel-tricks" title="Get the source of this site"><i class="fa fa-github fa-lg"></i></a>',
+    'footer_links' => '<a target="_blank" href="https://github.com/alma-com/alma-workshop" title="Get the source of this site"><i class="fa fa-github fa-lg"></i></a>',
 
 );
