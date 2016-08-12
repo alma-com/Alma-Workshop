@@ -48,7 +48,9 @@
                         </p>
                     @endif
                     <p>{{{ $trick->description }}}</p>
-                    <pre><code class="php">{{{ $trick->code }}}</code></pre>
+                    @if($trick->code)
+                        <pre><code class="php">{{{ $trick->code }}}</code></pre>
+                    @endif
                 </div>
             </div>
                 <div class="col-lg-3 col-md-4">
