@@ -59,7 +59,10 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     public function getFolderArchive($trickId = '', $userId = '')
     {
         if($trickId === '') return false;
-        if($userId === '') $userId = Auth::user()->id;
+        if($userId === ''){
+            $trick = $this->model->find($trickId);
+            $userId = $trick->user_id;
+        }
 
         return 'storage/' . $userId . '/' . $trickId;
     }
