@@ -7,5 +7,6 @@ composer.lock
 Thumbs.db
 /cgi-bin
 public/storage/
+public/img/avatar/
 app/config/database.php
 .htaccess
