@@ -10,3 +10,4 @@ public/storage/
 public/img/avatar/
 app/config/database.php
 .htaccess
+/.idea
