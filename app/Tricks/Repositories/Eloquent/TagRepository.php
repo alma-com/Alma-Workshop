@@ -52,6 +52,27 @@ class TagRepository extends AbstractRepository implements TagRepositoryInterface
     }
 
     /**
+     * Find tags for menu.
+     *
+     * @param  string  $orderColumn
+     * @param  string  $orderDir
+     * @return \Illuminate\Database\Eloquent\Collection|\Tricks\Tag[]
+     */
+    public function listMenu($orderDir = 'desc')
+    {
+        return $this->model
+                ->leftJoin('tag_trick', 'tags.id', '=', 'tag_trick.tag_id')
+                ->leftJoin('tricks', 'tricks.id', '=', 'tag_trick.trick_id')
+                ->groupBy('tags.slug')
+                ->orderBy('trick_count', 'desc')
+                ->get([
+                    'tags.name',
+                    'tags.slug',
+                    DB::raw('COUNT(tricks.id) as trick_count')
+                ]);
+    }
+
+    /**
      * Find a tag by id.
      *
      * @param  mixed  $id

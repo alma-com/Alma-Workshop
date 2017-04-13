@@ -9,7 +9,10 @@
                 <ul class="left-nav__wrap">
                     @foreach($tags as $tag)
                         <li class="left-nav__item">
-                            <a class="left-nav__link{{isCurrent('tags/'.$tag->slug)}}" href="{{url('tags/'.$tag->slug)}}">{{ $tag->name }}</a>
+                            <a class="left-nav__link{{isCurrent('tags/'.$tag->slug)}}" href="{{url('tags/'.$tag->slug)}}">
+                                {{ $tag->name }}
+                                <span class="left-nav__count">({{$tag->trick_count}})</span>
+                            </a>
                         </li>
                     @endforeach
                 </ul>

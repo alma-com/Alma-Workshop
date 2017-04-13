@@ -21,6 +21,13 @@ interface TagRepositoryInterface
     public function findAll($orderColumn = 'created_at', $orderDir = 'desc');
 
     /**
+     * Find tags for menu.
+     * @param  string $orderDir
+     * @return \Illuminate\Database\Eloquent\Collection|\Tricks\Tag[]
+     */
+    public function listMenu($orderDir = 'desc');
+
+    /**
      * Find a tag by id.
      *
      * @param  mixed $id

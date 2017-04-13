@@ -33,6 +33,12 @@
     right: 9px;
     top: 8px;
 }
+.left-nav__count{
+    position: absolute;
+    right: 15px;
+    font-size: 13px;
+    line-height: 1.15;
+}
 .left-nav__wrap {
     list-style: none;
     padding: 7px 0 15px;
@@ -48,9 +54,10 @@
     font-size: 16px;
     color: #FB503B;
     display: block;
-    padding: 3px 20px 4px;
+    padding: 3px 45px 4px 20px;
     background-color: #fff;
     line-height: 1;
+    position: relative;
 }
 
 .left-nav__link.active,

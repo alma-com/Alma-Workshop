@@ -98,7 +98,7 @@ class BrowseController extends BaseController
     public function getBrowseTag($tag)
     {
         list($tag, $tricks) = $this->tricks->findByTag($tag);
-        $tags = $this->tags->findAll();
+        $tags = $this->tags->listMenu();
         $type      = \Lang::get('browse.tag', array('tag' => $tag->name));
         $pageTitle = \Lang::get('browse.browsing_tag', array('tag' => $tag->name));
 
@@ -113,7 +113,7 @@ class BrowseController extends BaseController
     public function getBrowseRecent()
     {
         $tricks = $this->tricks->findMostRecent();
-        $tags = $this->tags->findAll();
+        $tags = $this->tags->listMenu();
         $type      = \Lang::get('browse.recent');
         $pageTitle = \Lang::get('browse.browsing_most_recent_tricks');
 
