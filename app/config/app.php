@@ -186,13 +186,13 @@ return array(
         'Validator'      => 'Illuminate\Support\Facades\Validator',
         'View'           => 'Illuminate\Support\Facades\View',
 
-        'Github'         => 'Tricks\Facades\Github',
-        'GithubProvider' => 'Tricks\Facades\GithubProvider',
+//        'Github'         => 'Tricks\Facades\Github',
+//        'GithubProvider' => 'Tricks\Facades\GithubProvider',
         'Image'          => 'Intervention\Image\Facades\Image',
         'Gravatar'       => 'Thomaswelton\LaravelGravatar\Facades\Gravatar',
         'ImageUpload'    => 'Tricks\Facades\ImageUpload',
         'Navigation'     => 'Tricks\Facades\Navigation',
-        'Disqus'         => 'Tricks\Facades\Disqus',
+//        'Disqus'         => 'Tricks\Facades\Disqus',
 
         'Slug' => 'Ivanlemeshev\Laravel4CyrillicSlug\Facades\Slug',
     ),

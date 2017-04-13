@@ -128,11 +128,11 @@ class BrowseController extends BaseController
     public function getBrowsePopular()
     {
         $tricks = $this->tricks->findMostPopular();
-
+        $tags = $this->tags->listMenu();
         $type      = \Lang::get('browse.popular');
         $pageTitle = \Lang::get('browse.browsing_most_popular_tricks');
 
-        $this->view('browse.index', compact('tricks', 'type', 'pageTitle'));
+        $this->view('browse.index', compact('tricks', 'type', 'pageTitle','tags'));
     }
 
     /**
@@ -143,10 +143,10 @@ class BrowseController extends BaseController
     public function getBrowseComments()
     {
         $tricks = $this->tricks->findMostCommented();
-
+        $tags = $this->tags->listMenu();
         $type      = \Lang::get('browse.most_commented');
         $pageTitle = \Lang::get('browse.browsing_most_commented_tricks');
 
-        $this->view('browse.index', compact('tricks', 'type', 'pageTitle'));
+        $this->view('browse.index', compact('tricks', 'type', 'pageTitle','tags'));
     }
 }

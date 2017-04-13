@@ -2,7 +2,7 @@
 
 namespace Tricks\Repositories\Eloquent;
 
-use Disqus;
+use Tricks\Facades\Disqus;
 use Tricks\Tag;
 use Tricks\User;
 use Tricks\Trick;
@@ -160,7 +160,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     {
         $tricks = $this->model->orderBy('created_at', 'desc')->get();
 
-        $tricks = Disqus::appendCommentCounts($tricks);
+//        $tricks = Disqus::appendCommentCounts($tricks);
 
         $tricks = $tricks->sortBy(function ($trick) {
             return $trick->comment_count;

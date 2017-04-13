@@ -8,7 +8,12 @@ return array(
 		array(
 			'label' => 'Browse',
 			'route' => 'browse.recent',
-			'active' => array('/','popular','comments')
+			'active' => array(
+			    '/',
+                'popular'
+//                ,
+//                'comments'
+            )
 		),
 		array(
 			'label' => 'Categories',
@@ -38,12 +43,13 @@ return array(
 			'label' => 'Most popular',
 			'route' => 'browse.popular',
 			'active' => array('popular')
-		),
-		array(
-			'label' => 'Most commented',
-			'route' => 'browse.comments',
-			'active' => array('comments')
-		),
+		)
+//        ,
+//		array(
+//			'label' => 'Most commented',
+//			'route' => 'browse.comments',
+//			'active' => array('comments')
+//		),
 	),
 
 );

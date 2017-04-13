@@ -27,7 +27,7 @@ Route::group(['namespace' => 'Controllers' ], function () {
     # Authentication and registration routes
     Route::get('login', ['as' => 'auth.login','uses' => 'AuthController@getLogin' ]);
     Route::post('login', 'AuthController@postLogin');
-    Route::get('login/github', [ 'as' => 'auth.login.github', 'uses' => 'AuthController@getLoginWithGithub' ]);
+    //Route::get('login/github', [ 'as' => 'auth.login.github', 'uses' => 'AuthController@getLoginWithGithub' ]);
     Route::get('register', ['before' => 'auth',  'as' => 'auth.register', 'uses' => 'AuthController@getRegister']);
     Route::post('register', ['before' => 'auth', 'uses' => 'AuthController@postRegister']);
     Route::get('logout', [ 'as' => 'auth.logout', 'uses' => 'AuthController@getLogout' ]);
@@ -43,7 +43,7 @@ Route::group(['before' => 'auth', 'namespace' => 'Controllers' ], function () {
     # Home routes
     Route::get('/', [ 'as' => 'browse.recent', 'uses' => 'BrowseController@getBrowseRecent' ]);
     Route::get('popular', [ 'as' => 'browse.popular', 'uses' => 'BrowseController@getBrowsePopular' ]);
-    Route::get('comments', [ 'as' => 'browse.comments', 'uses' => 'BrowseController@getBrowseComments' ]);
+//    Route::get('comments', [ 'as' => 'browse.comments', 'uses' => 'BrowseController@getBrowseComments' ]);
     Route::get('about', [ 'as' => 'about', 'uses' => 'HomeController@getAbout' ]);
 
     # Trick routes
