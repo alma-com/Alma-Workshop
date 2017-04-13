@@ -20,7 +20,7 @@
 		|
 		{{ trans('layouts.site_title') }}
 	</title>
-        <link rel="stylesheet" href="{{ URL::asset('css/laratricks.min.4.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset('css/laratricks.min.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('css/extra.css') }}">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         @yield('styles')

@@ -20,7 +20,14 @@
 			</div>
 		</div>
 		@endif
+		<div class="row">
+			<div class="col-lg-3">
+				@include('menu.navigation', ['tags' => $tags])
+			</div>
+			<div class="col-lg-9">
+				@include('tricks.grid', ['tricks' => $tricks])
+			</div>
+		</div>
 
-		@include('tricks.grid', ['tricks' => $tricks])
 	</div>
 @stop
